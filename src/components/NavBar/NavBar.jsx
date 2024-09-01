@@ -3,6 +3,7 @@ import Link from "../Link/Link";
 import { HiMenuAlt1 } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
 
+
 const NavBar = () => {
     const [open, setOpen] = useState(false);
     const routes = [
@@ -20,7 +21,7 @@ const NavBar = () => {
                     open === true ? <IoMdClose /> : <HiMenuAlt1 />
                 }            
             </div>
-            <ul className="md:flex absolute bg-yellow-200 px-5 py-3 shadow-inner border border-gray-400">
+            <ul className={`md:flex absolute duration-700 bg-yellow-200 px-5 py-3 shadow-inner border border-gray-400 ${open ? 'left-6':'-left-60'}`}>
                 {
                     routes.map(route => <Link key={route.id} route={route}></Link>)
                 }
